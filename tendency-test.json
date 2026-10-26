@@ -1,0 +1,638 @@
+{
+  "version": "native-2",
+  "authorship": "Original Nashenas adult preference explorer; not a reproduction of an external test.",
+  "roles": [
+    {
+      "id": "dominant",
+      "label_en": "Dominant",
+      "label_fa": "دامیننت / سلطه‌گر",
+      "description_en": "Interest in taking control, giving commands and setting agreed rules in adult BDSM.",
+      "description_fa": "تمایل به در دست گرفتن کنترل، دستور دادن و تعیین قوانین توافقی در BDSM بزرگسالانه.",
+      "quick": true
+    },
+    {
+      "id": "submissive",
+      "label_en": "Submissive",
+      "label_fa": "سابمیسیو / مطیع",
+      "description_en": "Interest in voluntarily obeying a dominant partner within your chosen limits.",
+      "description_fa": "تمایل به اطاعت داوطلبانه از پارتنر دامیننت در چارچوب مرزهای انتخابی خود.",
+      "quick": true
+    },
+    {
+      "id": "switch",
+      "label_en": "Switch / flexible roles",
+      "label_fa": "سوییچ / انعطاف در نقش",
+      "description_en": "Interest in both guiding and following, depending on the person, context or occasion.",
+      "description_fa": "تمایل به هدایت‌گری و پیروی، بسته به فرد، موقعیت یا زمان.",
+      "quick": true
+    },
+    {
+      "id": "rigger",
+      "label_en": "Rigger / restraint giver",
+      "label_fa": "ریگر / ایجاد محدودیت حرکتی",
+      "description_en": "Interest in the giving side of negotiated restraint. A score does not imply practical safety knowledge.",
+      "description_fa": "تمایل به ایجاد محدودیت حرکتیِ توافقی برای طرف مقابل؛ امتیاز، نشانهٔ مهارت یا آگاهی ایمنی نیست.",
+      "quick": true
+    },
+    {
+      "id": "rope_bunny",
+      "label_en": "Rope bunny / restraint receiver",
+      "label_fa": "روپ بانی / پذیرش محدودیت حرکتی",
+      "description_en": "Interest in receiving agreed restraint with clear limits, communication and a reliable way to stop.",
+      "description_fa": "تمایل به دریافت محدودیت حرکتیِ توافقی، با مرز روشن، ارتباط و امکان مطمئن توقف.",
+      "quick": true
+    },
+    {
+      "id": "sensation_top",
+      "label_en": "Sadist / consensual pain giver",
+      "label_fa": "سادیست / درددهندهٔ توافقی",
+      "description_en": "Interest in giving controlled pain to a consenting adult who wants it. This describes a preference, not a clinical diagnosis.",
+      "description_fa": "تمایل به واردکردن درد کنترل‌شده به بزرگسالی که با رضایت آن را می‌خواهد؛ این یک ترجیح است، نه تشخیص بالینی.",
+      "quick": true
+    },
+    {
+      "id": "sensation_bottom",
+      "label_en": "Masochist / consensual pain receiver",
+      "label_fa": "مازوخیست / دردپذیر توافقی",
+      "description_en": "Interest in receiving consensual pain within your own limits. Interest does not measure pain tolerance or imply a diagnosis.",
+      "description_fa": "تمایل به دریافت درد توافقی در مرزهای شخصی؛ این علاقه میزان تحمل درد یا تشخیص بالینی را نشان نمی‌دهد.",
+      "quick": true
+    },
+    {
+      "id": "caregiver",
+      "label_en": "Caregiver / nurturing",
+      "label_fa": "مراقبت‌گر",
+      "description_en": "Interest in a nurturing adult role with reassurance, guidance and mutual respect.",
+      "description_fa": "تمایل به نقشی مراقبت‌گر میان بزرگسالان، همراه با دلگرمی، راهنمایی و احترام متقابل.",
+      "quick": true
+    },
+    {
+      "id": "service",
+      "label_en": "Consensual slave / service",
+      "label_fa": "بردهٔ توافقی / خدمت‌گزار",
+      "description_en": "Interest in a voluntary adult slave role, service and agreed obedience to a Master or Mistress. The right to refuse, withdraw consent and leave remains yours.",
+      "description_fa": "تمایل به نقش داوطلبانهٔ برده، خدمت و اطاعت توافقی از مستر یا میسترس میان بزرگسالان؛ حق نه‌گفتن، پس‌گرفتن رضایت و خروج همیشه محفوظ است.",
+      "quick": true
+    },
+    {
+      "id": "brat",
+      "label_en": "Playful challenger / brat",
+      "label_fa": "برت / چالش‌گر بازیگوش",
+      "description_en": "Interest in teasing and playful resistance inside agreed boundaries, without ignoring real limits.",
+      "description_fa": "تمایل به شوخی و مقاومت بازیگوشانه در مرزهای توافقی، بدون نادیده‌گرفتن مرزهای واقعی.",
+      "quick": true
+    },
+    {
+      "id": "brat_tamer",
+      "label_en": "Brat tamer",
+      "label_fa": "برت تیمر / رام‌کنندهٔ برت",
+      "description_en": "Interest in responding to invited teasing with patience and agreed structure.",
+      "description_fa": "تمایل به پاسخ‌دادن به شیطنتِ پذیرفته‌شده با صبوری و چارچوب توافقی.",
+      "quick": true
+    },
+    {
+      "id": "experimentalist",
+      "label_en": "Explorer / experimentalist",
+      "label_fa": "تجربه‌گرا",
+      "description_en": "Interest in learning and exploring adult preferences at a personally comfortable pace. Curiosity is not a commitment.",
+      "description_fa": "تمایل به شناخت و تجربهٔ ترجیحات بزرگسالانه با سرعت مناسب خود؛ کنجکاوی به معنی تعهد به انجام نیست.",
+      "quick": true
+    },
+    {
+      "id": "owner",
+      "label_en": "Master / Mistress / owner",
+      "label_fa": "مستر / میسترس / ارباب",
+      "description_en": "Interest in a consensual adult Master, Mistress or symbolic owner role. Ownership is roleplay; neither person loses autonomy or the right to leave.",
+      "description_fa": "تمایل به نقش توافقیِ مستر، میسترس یا ارباب نمادین میان بزرگسالان؛ مالکیت در چارچوب نقش‌آفرینی است و استقلال و حق خروج هر دو نفر محفوظ می‌ماند.",
+      "quick": false
+    },
+    {
+      "id": "pet",
+      "label_en": "Adult pet-role player",
+      "label_fa": "پت / نقش‌آفرینی حیوانیِ بزرگسالانه",
+      "description_en": "Interest in adult roleplay using an animal-inspired persona. It does not imply loss of rights or personhood.",
+      "description_fa": "تمایل به نقش‌آفرینی بزرگسالانه با شخصیت الهام‌گرفته از حیوان؛ به معنی از دست‌دادن حقوق یا هویت انسانی نیست.",
+      "quick": false
+    },
+    {
+      "id": "verbal_top",
+      "label_en": "Degrader / consensual humiliation giver",
+      "label_fa": "تحقیرکنندهٔ توافقی",
+      "description_en": "Interest in giving verbal humiliation that an adult partner wants, using agreed words and limits. This excludes unwanted insults and actual abuse.",
+      "description_fa": "تمایل به تحقیر کلامیِ دلخواهِ پارتنر بزرگسال، با واژه‌ها و مرزهای توافقی؛ توهین ناخواسته و آزار واقعی شامل آن نمی‌شود.",
+      "quick": false
+    },
+    {
+      "id": "verbal_bottom",
+      "label_en": "Consensual humiliation receiver",
+      "label_fa": "تحقیرپذیر توافقی",
+      "description_en": "Interest in receiving verbal humiliation with advance agreement on words, limits and stopping. It is never permission for real abuse.",
+      "description_fa": "تمایل به دریافت تحقیر کلامی با توافق قبلی دربارهٔ واژه‌ها، مرزها و توقف؛ این علاقه اجازهٔ آزار واقعی نیست.",
+      "quick": false
+    },
+    {
+      "id": "primal",
+      "label_en": "Instinctive / spontaneous play",
+      "label_fa": "بازی غریزی / خودجوش",
+      "description_en": "Interest in spontaneity and instinctive expression within negotiated safety boundaries. Consent is never suspended.",
+      "description_fa": "تمایل به خودجوشی و بیان غریزی در مرزهای ایمنیِ توافق‌شده؛ رضایت هرگز کنار گذاشته نمی‌شود.",
+      "quick": false
+    },
+    {
+      "id": "vanilla",
+      "label_en": "Vanilla / intimacy without BDSM",
+      "label_fa": "وانیلا / صمیمیت بدون BDSM",
+      "description_en": "Interest in intimacy without a special power dynamic or role. It is a preference, not a lesser or better result.",
+      "description_fa": "تمایل به صمیمیت بدون رابطهٔ قدرت یا نقش ویژه؛ این ترجیح، نتیجه‌ای بهتر یا بدتر از دیگران نیست.",
+      "quick": false
+    }
+  ],
+  "questions": [
+    {
+      "id": "dominant_1",
+      "role": "dominant",
+      "text_en": "I like taking the dominant role and giving my partner agreed commands.",
+      "text_fa": "دوست دارم نقش دامیننت را داشته باشم و به پارتنرم دستورهای توافق‌شده بدهم.",
+      "reverse": false,
+      "weight": 1,
+      "round": 1
+    },
+    {
+      "id": "dominant_2",
+      "role": "dominant",
+      "text_en": "Setting rules for a submissive partner appeals to me when we have agreed on the limits.",
+      "text_fa": "تعیین قانون برای پارتنر سابمیسیو، در مرزهایی که با هم توافق کرده‌ایم، برایم جذاب است.",
+      "reverse": false,
+      "weight": 1,
+      "round": 2
+    },
+    {
+      "id": "dominant_3",
+      "role": "dominant",
+      "text_en": "Being the dominant partner in a BDSM dynamic does not appeal to me.",
+      "text_fa": "داشتن نقش دامیننت در یک رابطهٔ BDSM برایم جذاب نیست.",
+      "reverse": true,
+      "weight": 1,
+      "round": 3
+    },
+    {
+      "id": "submissive_1",
+      "role": "submissive",
+      "text_en": "I like taking the submissive role and obeying a trusted dominant partner.",
+      "text_fa": "دوست دارم نقش سابمیسیو را داشته باشم و از پارتنر دامیننتِ مورد اعتمادم اطاعت کنم.",
+      "reverse": false,
+      "weight": 1,
+      "round": 1
+    },
+    {
+      "id": "submissive_2",
+      "role": "submissive",
+      "text_en": "Voluntarily giving my partner control within my limits appeals to me.",
+      "text_fa": "اینکه با میل خودم و در چارچوب مرزهایم کنترل را به پارتنرم بسپارم برایم جذاب است.",
+      "reverse": false,
+      "weight": 1,
+      "round": 2
+    },
+    {
+      "id": "submissive_3",
+      "role": "submissive",
+      "text_en": "Obeying a dominant partner’s agreed commands does not appeal to me.",
+      "text_fa": "اطاعت از دستورهای توافق‌شدهٔ پارتنر دامیننت برایم جذاب نیست.",
+      "reverse": true,
+      "weight": 1,
+      "round": 3
+    },
+    {
+      "id": "switch_1",
+      "role": "switch",
+      "text_en": "I enjoy being dominant sometimes and submissive at other times.",
+      "text_fa": "دوست دارم گاهی دامیننت و گاهی سابمیسیو باشم.",
+      "reverse": false,
+      "weight": 1,
+      "round": 1
+    },
+    {
+      "id": "switch_2",
+      "role": "switch",
+      "text_en": "Depending on my partner or mood, I want to either give commands or obey them.",
+      "text_fa": "بسته به پارتنر یا حال‌وهوایم، گاهی می‌خواهم دستور بدهم و گاهی اطاعت کنم.",
+      "reverse": false,
+      "weight": 1,
+      "round": 2
+    },
+    {
+      "id": "switch_3",
+      "role": "switch",
+      "text_en": "I want to keep one fixed dominant or submissive role rather than switch between them.",
+      "text_fa": "می‌خواهم همیشه یک نقش ثابت، دامیننت یا سابمیسیو، داشته باشم و بین این دو جابه‌جا نشوم.",
+      "reverse": true,
+      "weight": 1,
+      "round": 3
+    },
+    {
+      "id": "rigger_1",
+      "role": "rigger",
+      "text_en": "Tying up a willing adult partner with rope as part of bondage appeals to me.",
+      "text_fa": "بستن پارتنر بزرگسالِ موافق با طناب، در قالب باندیج، برایم جذاب است.",
+      "reverse": false,
+      "weight": 1,
+      "round": 1
+    },
+    {
+      "id": "rigger_2",
+      "role": "rigger",
+      "text_en": "I want to be the person who applies agreed restraints, with the necessary safety knowledge.",
+      "text_fa": "دوست دارم با داشتن دانش ایمنی لازم، کسی باشم که محدودیت حرکتیِ توافق‌شده را برای پارتنر ایجاد می‌کند.",
+      "reverse": false,
+      "weight": 1,
+      "round": 2
+    },
+    {
+      "id": "rigger_3",
+      "role": "rigger",
+      "text_en": "Tying up or restraining a willing partner does not interest me.",
+      "text_fa": "بستن یا محدودکردن حرکت پارتنرِ موافق برایم جذاب نیست.",
+      "reverse": true,
+      "weight": 1,
+      "round": 3
+    },
+    {
+      "id": "rope_bunny_1",
+      "role": "rope_bunny",
+      "text_en": "Being tied up with rope by a trusted partner appeals to me.",
+      "text_fa": "اینکه پارتنری مورد اعتماد مرا با طناب ببندد برایم جذاب است.",
+      "reverse": false,
+      "weight": 1,
+      "round": 1
+    },
+    {
+      "id": "rope_bunny_2",
+      "role": "rope_bunny",
+      "text_en": "I enjoy the idea of being restrained during consensual bondage, while keeping a way to stop.",
+      "text_fa": "تصور بسته‌شدن و محدودشدن حرکتم در باندیجِ توافقی، با حفظ امکان توقف، برایم خوشایند است.",
+      "reverse": false,
+      "weight": 1,
+      "round": 2
+    },
+    {
+      "id": "rope_bunny_3",
+      "role": "rope_bunny",
+      "text_en": "Even with trust and clear limits, I do not want to be tied up or restrained.",
+      "text_fa": "حتی با اعتماد و مرزهای روشن، نمی‌خواهم بسته شوم یا حرکتم محدود شود.",
+      "reverse": true,
+      "weight": 1,
+      "round": 3
+    },
+    {
+      "id": "sensation_top_1",
+      "role": "sensation_top",
+      "text_en": "Giving a partner controlled pain that they want, within agreed limits, appeals to me.",
+      "text_fa": "واردکردن دردِ کنترل‌شده‌ای که پارتنرم خودش می‌خواهد، در مرزهای توافقی، برایم جذاب است.",
+      "reverse": false,
+      "weight": 1,
+      "round": 1
+    },
+    {
+      "id": "sensation_top_2",
+      "role": "sensation_top",
+      "text_en": "The sadist role in consensual BDSM interests me.",
+      "text_fa": "نقش سادیست در BDSM توافقی برایم جذاب است.",
+      "reverse": false,
+      "weight": 1,
+      "round": 2
+    },
+    {
+      "id": "sensation_top_3",
+      "role": "sensation_top",
+      "text_en": "Giving a partner pain does not appeal to me, even when they freely ask for it.",
+      "text_fa": "درددادن به پارتنر برایم جذاب نیست، حتی اگر خودش آزادانه آن را بخواهد.",
+      "reverse": true,
+      "weight": 1,
+      "round": 3
+    },
+    {
+      "id": "sensation_bottom_1",
+      "role": "sensation_bottom",
+      "text_en": "Receiving controlled pain from a trusted partner, within my limits, appeals to me.",
+      "text_fa": "دریافت دردِ کنترل‌شده از پارتنری مورد اعتماد، در چارچوب مرزهایم، برایم جذاب است.",
+      "reverse": false,
+      "weight": 1,
+      "round": 1
+    },
+    {
+      "id": "sensation_bottom_2",
+      "role": "sensation_bottom",
+      "text_en": "The masochist role in consensual BDSM interests me.",
+      "text_fa": "نقش مازوخیست در BDSM توافقی برایم جذاب است.",
+      "reverse": false,
+      "weight": 1,
+      "round": 2
+    },
+    {
+      "id": "sensation_bottom_3",
+      "role": "sensation_bottom",
+      "text_en": "Receiving pain during BDSM does not appeal to me, even with clear agreement.",
+      "text_fa": "دریافت درد در BDSM برایم جذاب نیست، حتی با توافق روشن.",
+      "reverse": true,
+      "weight": 1,
+      "round": 3
+    },
+    {
+      "id": "caregiver_1",
+      "role": "caregiver",
+      "text_en": "I like taking a caring, protective role toward my adult partner within our agreed dynamic.",
+      "text_fa": "دوست دارم در رابطهٔ توافقی‌مان نقش مراقبت‌گر و حمایت‌گر را برای پارتنر بزرگسالم داشته باشم.",
+      "reverse": false,
+      "weight": 1,
+      "round": 1
+    },
+    {
+      "id": "caregiver_2",
+      "role": "caregiver",
+      "text_en": "Combining agreed rules with reassurance and emotional care for my adult partner appeals to me.",
+      "text_fa": "ترکیب قوانین توافقی با دلگرمی‌دادن و مراقبت عاطفی از پارتنر بزرگسالم برایم جذاب است.",
+      "reverse": false,
+      "weight": 1,
+      "round": 2
+    },
+    {
+      "id": "caregiver_3",
+      "role": "caregiver",
+      "text_en": "Taking a caregiver role toward an adult partner is not something I want.",
+      "text_fa": "نمی‌خواهم در رابطه با پارتنر بزرگسالم نقش مراقبت‌گر داشته باشم.",
+      "reverse": true,
+      "weight": 1,
+      "round": 3
+    },
+    {
+      "id": "service_1",
+      "role": "service",
+      "text_en": "Taking a consensual slave role and serving a Master or Mistress appeals to me.",
+      "text_fa": "داشتن نقش بردهٔ توافقی و خدمت‌کردن به مستر یا میسترس برایم جذاب است.",
+      "reverse": false,
+      "weight": 1,
+      "round": 1
+    },
+    {
+      "id": "service_2",
+      "role": "service",
+      "text_en": "I would enjoy agreed duties and rituals of obedience in a voluntary Master/slave dynamic.",
+      "text_fa": "از وظایف و آیین‌های اطاعتِ توافق‌شده در یک رابطهٔ داوطلبانهٔ ارباب و برده خوشم می‌آید.",
+      "reverse": false,
+      "weight": 1,
+      "round": 2
+    },
+    {
+      "id": "service_3",
+      "role": "service",
+      "text_en": "A consensual slave role does not appeal to me, even when I can refuse or leave.",
+      "text_fa": "نقش بردهٔ توافقی برایم جذاب نیست، حتی وقتی حق نه‌گفتن و پایان‌دادن به رابطه را داشته باشم.",
+      "reverse": true,
+      "weight": 1,
+      "round": 3
+    },
+    {
+      "id": "brat_1",
+      "role": "brat",
+      "text_en": "I like teasing a dominant partner by playfully disobeying agreed rules.",
+      "text_fa": "دوست دارم با سرپیچیِ بازیگوشانه از قوانین توافقی، پارتنر دامیننت را به چالش بکشم.",
+      "reverse": false,
+      "weight": 1,
+      "round": 1
+    },
+    {
+      "id": "brat_2",
+      "role": "brat",
+      "text_en": "Provoking an agreed response from my dominant partner through playful defiance appeals to me.",
+      "text_fa": "دوست دارم با لجبازیِ بازیگوشانه، پارتنر دامیننتم را به واکنشی که از قبل پذیرفته‌ایم وادار کنم.",
+      "reverse": false,
+      "weight": 1,
+      "round": 2
+    },
+    {
+      "id": "brat_3",
+      "role": "brat",
+      "text_en": "Playfully disobeying or challenging a dominant partner does not appeal to me.",
+      "text_fa": "سرپیچی یا به‌چالش‌کشیدن بازیگوشانهٔ پارتنر دامیننت برایم جذاب نیست.",
+      "reverse": true,
+      "weight": 1,
+      "round": 3
+    },
+    {
+      "id": "brat_tamer_1",
+      "role": "brat_tamer",
+      "text_en": "I enjoy the dominant role with a brat who welcomes agreed responses to their teasing.",
+      "text_fa": "دوست دارم در برابر یک برت که از پاسخ‌های توافقی به شیطنتش استقبال می‌کند، نقش دامیننت را داشته باشم.",
+      "reverse": false,
+      "weight": 1,
+      "round": 1
+    },
+    {
+      "id": "brat_tamer_2",
+      "role": "brat_tamer",
+      "text_en": "Responding to playful disobedience with agreed discipline appeals to me.",
+      "text_fa": "پاسخ‌دادن به سرپیچیِ بازیگوشانه با تنبیه توافقی برایم جذاب است.",
+      "reverse": false,
+      "weight": 1,
+      "round": 2
+    },
+    {
+      "id": "brat_tamer_3",
+      "role": "brat_tamer",
+      "text_en": "Managing a brat’s playful defiance is not a role I want.",
+      "text_fa": "نقش کنترل‌کردن لجبازیِ بازیگوشانهٔ یک برت را نمی‌خواهم.",
+      "reverse": true,
+      "weight": 1,
+      "round": 3
+    },
+    {
+      "id": "experimentalist_1",
+      "role": "experimentalist",
+      "text_en": "I like exploring unfamiliar BDSM roles and practices before deciding what suits me.",
+      "text_fa": "دوست دارم نقش‌ها و تجربه‌های ناآشنای BDSM را بشناسم تا ببینم کدام با من سازگار است.",
+      "reverse": false,
+      "weight": 1,
+      "round": 1
+    },
+    {
+      "id": "experimentalist_2",
+      "role": "experimentalist",
+      "text_en": "Trying a new consensual BDSM dynamic after discussing limits appeals to me.",
+      "text_fa": "تجربهٔ یک سبک تازهٔ BDSM، پس از گفت‌وگو دربارهٔ مرزها و رضایت، برایم جذاب است.",
+      "reverse": false,
+      "weight": 1,
+      "round": 2
+    },
+    {
+      "id": "experimentalist_3",
+      "role": "experimentalist",
+      "text_en": "I prefer familiar BDSM roles and practices rather than trying new ones.",
+      "text_fa": "ترجیح می‌دهم به نقش‌ها و تجربه‌های آشنای BDSM پایبند بمانم و چیز تازه‌ای امتحان نکنم.",
+      "reverse": true,
+      "weight": 1,
+      "round": 3
+    },
+    {
+      "id": "owner_1",
+      "role": "owner",
+      "text_en": "Taking the Master or Mistress role in a consensual ownership dynamic appeals to me.",
+      "text_fa": "داشتن نقش مستر یا میسترس در یک رابطهٔ مالکیت توافقی برایم جذاب است.",
+      "reverse": false,
+      "weight": 1,
+      "round": 1
+    },
+    {
+      "id": "owner_2",
+      "role": "owner",
+      "text_en": "I like the idea of a willing partner calling me their owner and following our agreed rules.",
+      "text_fa": "اینکه پارتنرم با میل خودش مرا اربابش بداند و از قوانین توافقی‌مان پیروی کند برایم جذاب است.",
+      "reverse": false,
+      "weight": 1,
+      "round": 2
+    },
+    {
+      "id": "owner_3",
+      "role": "owner",
+      "text_en": "Being someone’s consensual Master, Mistress or owner does not appeal to me.",
+      "text_fa": "داشتن نقش توافقیِ مستر، میسترس یا اربابِ یک نفر برایم جذاب نیست.",
+      "reverse": true,
+      "weight": 1,
+      "round": 3
+    },
+    {
+      "id": "pet_1",
+      "role": "pet",
+      "text_en": "Taking an adult pet-play role, such as pretending to be a cat or dog, appeals to me.",
+      "text_fa": "داشتن نقش پت در نقش‌آفرینیِ بزرگسالانه، مثلاً نقش گربه یا سگ، برایم جذاب است.",
+      "reverse": false,
+      "weight": 1,
+      "round": 1
+    },
+    {
+      "id": "pet_2",
+      "role": "pet",
+      "text_en": "As an adult in pet play, I would enjoy agreed commands, praise and care from my partner.",
+      "text_fa": "دوست دارم به‌عنوان یک بزرگسال در نقش پت، دستورها، تشویق و مراقبت توافقی را از پارتنرم دریافت کنم.",
+      "reverse": false,
+      "weight": 1,
+      "round": 2
+    },
+    {
+      "id": "pet_3",
+      "role": "pet",
+      "text_en": "Playing an animal-inspired role with another adult does not appeal to me.",
+      "text_fa": "نقش‌آفرینی با شخصیت حیوانی در کنار یک بزرگسال دیگر برایم جذاب نیست.",
+      "reverse": true,
+      "weight": 1,
+      "round": 3
+    },
+    {
+      "id": "verbal_top_1",
+      "role": "verbal_top",
+      "text_en": "Verbally humiliating a willing partner with words we have agreed on appeals to me.",
+      "text_fa": "تحقیر کلامیِ پارتنرِ موافق، با واژه‌هایی که قبلاً پذیرفته‌ایم، برایم جذاب است.",
+      "reverse": false,
+      "weight": 1,
+      "round": 1
+    },
+    {
+      "id": "verbal_top_2",
+      "role": "verbal_top",
+      "text_en": "Taking the degrader role in consensual humiliation play interests me.",
+      "text_fa": "داشتن نقش تحقیرکننده در بازیِ تحقیر توافقی برایم جذاب است.",
+      "reverse": false,
+      "weight": 1,
+      "round": 2
+    },
+    {
+      "id": "verbal_top_3",
+      "role": "verbal_top",
+      "text_en": "I do not want to verbally humiliate a partner, even when they ask for it.",
+      "text_fa": "نمی‌خواهم پارتنرم را تحقیر کلامی کنم، حتی وقتی خودش آن را بخواهد.",
+      "reverse": true,
+      "weight": 1,
+      "round": 3
+    },
+    {
+      "id": "verbal_bottom_1",
+      "role": "verbal_bottom",
+      "text_en": "Being verbally humiliated by a trusted partner with agreed words appeals to me.",
+      "text_fa": "تحقیرشدن کلامی به‌دست پارتنری مورد اعتماد، با واژه‌های توافق‌شده، برایم جذاب است.",
+      "reverse": false,
+      "weight": 1,
+      "round": 1
+    },
+    {
+      "id": "verbal_bottom_2",
+      "role": "verbal_bottom",
+      "text_en": "Receiving consensual humiliation within my chosen limits interests me.",
+      "text_fa": "دریافت تحقیر توافقی در چارچوب مرزهایی که خودم تعیین می‌کنم برایم جذاب است.",
+      "reverse": false,
+      "weight": 1,
+      "round": 2
+    },
+    {
+      "id": "verbal_bottom_3",
+      "role": "verbal_bottom",
+      "text_en": "I do not want verbal humiliation in my BDSM dynamic, even by agreement.",
+      "text_fa": "نمی‌خواهم تحقیر کلامی در رابطهٔ BDSM من باشد، حتی با توافق.",
+      "reverse": true,
+      "weight": 1,
+      "round": 3
+    },
+    {
+      "id": "primal_1",
+      "role": "primal",
+      "text_en": "Consensual primal play, such as a chase or playful struggle with an adult partner, appeals to me.",
+      "text_fa": "بازیِ غریزیِ توافقی، مثل تعقیب‌وگریز یا کشمکش بازیگوشانه با پارتنر بزرگسال، برایم جذاب است.",
+      "reverse": false,
+      "weight": 1,
+      "round": 1
+    },
+    {
+      "id": "primal_2",
+      "role": "primal",
+      "text_en": "I like spontaneous, instinctive expression in BDSM while respecting agreed limits and stop signals.",
+      "text_fa": "بیان خودجوش و غریزی در BDSM را دوست دارم، با رعایت مرزهای توافقی و علامت توقف.",
+      "reverse": false,
+      "weight": 1,
+      "round": 2
+    },
+    {
+      "id": "primal_3",
+      "role": "primal",
+      "text_en": "I prefer a planned BDSM scene rather than spontaneous primal play.",
+      "text_fa": "سناریوی برنامه‌ریزی‌شدهٔ BDSM را به بازیِ غریزی و خودجوش ترجیح می‌دهم.",
+      "reverse": true,
+      "weight": 1,
+      "round": 3
+    },
+    {
+      "id": "vanilla_1",
+      "role": "vanilla",
+      "text_en": "Intimacy without domination, submission or BDSM appeals strongly to me.",
+      "text_fa": "صمیمیت بدون سلطه‌گری، اطاعت یا BDSM برایم بسیار جذاب است.",
+      "reverse": false,
+      "weight": 1,
+      "round": 1
+    },
+    {
+      "id": "vanilla_2",
+      "role": "vanilla",
+      "text_en": "I often prefer intimacy without bondage, pain or special power roles.",
+      "text_fa": "اغلب صمیمیت بدون باندیج، درد یا نقش‌های ویژهٔ قدرت را ترجیح می‌دهم.",
+      "reverse": false,
+      "weight": 1,
+      "round": 2
+    },
+    {
+      "id": "vanilla_3",
+      "role": "vanilla",
+      "text_en": "BDSM roles or practices are usually important to my enjoyment of intimacy.",
+      "text_fa": "نقش‌ها یا تجربه‌های BDSM معمولاً برای لذت‌بردن من از صمیمیت مهم‌اند.",
+      "reverse": true,
+      "weight": 1,
+      "round": 3
+    }
+  ]
+}

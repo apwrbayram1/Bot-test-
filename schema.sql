@@ -1,0 +1,161 @@
+CREATE TABLE IF NOT EXISTS platform_accounts (
+ id BIGINT PRIMARY KEY, role VARCHAR(16) NOT NULL DEFAULT 'user', title VARCHAR(80) NOT NULL DEFAULT '',
+ bio TEXT, interests TEXT, preferences TEXT, enabled_preferences TEXT,
+ balance BIGINT NOT NULL DEFAULT 0, available TINYINT NOT NULL DEFAULT 0,
+ heartbeat BIGINT NOT NULL DEFAULT 0, strikes INT NOT NULL DEFAULT 0,
+ language VARCHAR(2) NOT NULL DEFAULT '', panel VARCHAR(16) NOT NULL DEFAULT 'normal',
+ state VARCHAR(100) NOT NULL DEFAULT '', accepted TINYINT NOT NULL DEFAULT 0,
+ name_set TINYINT NOT NULL DEFAULT 0, gender VARCHAR(16) NOT NULL DEFAULT '', gender_changes INT NOT NULL DEFAULT 0,
+ age INT NOT NULL DEFAULT 0, age_set_at BIGINT NOT NULL DEFAULT 0,
+ phone VARCHAR(32) NOT NULL DEFAULT '', province_id BIGINT NOT NULL DEFAULT 0, city_id BIGINT NOT NULL DEFAULT 0,
+ telegram_username VARCHAR(32) NOT NULL DEFAULT '',
+ onboarding_done TINYINT NOT NULL DEFAULT 0, orientation_status VARCHAR(16) NOT NULL DEFAULT 'pending',
+ orientation_attempt VARCHAR(16) NOT NULL DEFAULT '', orientation_cipher LONGTEXT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS platform_settings (name VARCHAR(80) PRIMARY KEY, value TEXT NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS platform_sessions (
+ id BIGINT AUTO_INCREMENT PRIMARY KEY, customer BIGINT NOT NULL, provider BIGINT NOT NULL,
+ kind VARCHAR(16) NOT NULL, started BIGINT NOT NULL, paid_until BIGINT NOT NULL,
+ rules TEXT NOT NULL, status VARCHAR(16) NOT NULL DEFAULT 'active',
+ pending_since BIGINT NOT NULL DEFAULT 0, unanswered INT NOT NULL DEFAULT 0,
+ charged BIGINT NOT NULL DEFAULT 0, refunded BIGINT NOT NULL DEFAULT 0, reason VARCHAR(50) NOT NULL DEFAULT '',
+ INDEX(status), INDEX(customer), INDEX(provider)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS platform_participants (
+ user_id BIGINT PRIMARY KEY, session_id BIGINT NOT NULL, INDEX(session_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS platform_queue (user_id BIGINT PRIMARY KEY, joined BIGINT NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS platform_ledger (
+ id BIGINT AUTO_INCREMENT PRIMARY KEY, user_id BIGINT NOT NULL, amount BIGINT NOT NULL,
+ reason VARCHAR(100) NOT NULL, reference VARCHAR(160) NOT NULL UNIQUE, actor BIGINT NOT NULL DEFAULT 0,
+ created BIGINT NOT NULL, INDEX(user_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS platform_orders (
+ payload VARCHAR(80) PRIMARY KEY, user_id BIGINT NOT NULL, stars INT NOT NULL, coins INT NOT NULL,
+ charge_id VARCHAR(200) UNIQUE, status VARCHAR(16) NOT NULL DEFAULT 'pending', created BIGINT NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS platform_audit (
+ id BIGINT AUTO_INCREMENT PRIMARY KEY, actor BIGINT NOT NULL, action VARCHAR(80) NOT NULL,
+ detail TEXT NOT NULL, created BIGINT NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS platform_messages (
+ id BIGINT AUTO_INCREMENT PRIMARY KEY, session_id BIGINT NOT NULL,
+ token VARCHAR(32) NOT NULL UNIQUE,
+ source_chat BIGINT NOT NULL, source_message BIGINT NOT NULL,
+ target_chat BIGINT NOT NULL, target_message BIGINT NULL,
+ source_reaction VARCHAR(100) NOT NULL DEFAULT '', target_reaction VARCHAR(100) NOT NULL DEFAULT '',
+ source_reaction_date BIGINT NOT NULL DEFAULT 0, target_reaction_date BIGINT NOT NULL DEFAULT 0,
+ created BIGINT NOT NULL, text_cipher LONGTEXT NULL,
+ UNIQUE KEY source_message(source_chat,source_message), UNIQUE KEY target_message(target_chat,target_message), INDEX(session_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS platform_moderation (
+ id BIGINT AUTO_INCREMENT PRIMARY KEY, user_id BIGINT NOT NULL, session_id BIGINT NULL,
+ reason VARCHAR(32) NOT NULL, reference VARCHAR(100) NOT NULL UNIQUE, created BIGINT NOT NULL,
+ INDEX(user_id), INDEX(created)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS platform_catalog (
+ id VARCHAR(12) PRIMARY KEY, kind VARCHAR(16) NOT NULL,
+ label_en VARCHAR(60) NOT NULL, label_fa VARCHAR(60) NOT NULL,
+ enabled TINYINT NOT NULL DEFAULT 1, position INT NOT NULL DEFAULT 0,
+ UNIQUE KEY catalog_label(kind,label_en), INDEX(kind,enabled,position)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS platform_choices (
+ user_id BIGINT NOT NULL, scope VARCHAR(16) NOT NULL, option_id VARCHAR(12) NOT NULL,
+ PRIMARY KEY(user_id,scope,option_id), INDEX(option_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS platform_ui (
+ token VARCHAR(16) PRIMARY KEY, actor BIGINT NOT NULL, kind VARCHAR(32) NOT NULL,
+ payload TEXT NOT NULL, expires BIGINT NOT NULL, used TINYINT NOT NULL DEFAULT 0,
+ INDEX(actor,kind), INDEX(expires)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS platform_processed (
+ update_id BIGINT PRIMARY KEY, created BIGINT NOT NULL, INDEX(created)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS platform_mm_profiles (
+ user_id BIGINT PRIMARY KEY, title VARCHAR(80) NOT NULL DEFAULT '', bio TEXT, interests TEXT,
+ province_id BIGINT NOT NULL DEFAULT 0, city_id BIGINT NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS platform_requests (
+ token VARCHAR(16) PRIMARY KEY, kind VARCHAR(16) NOT NULL, customer BIGINT NOT NULL, provider BIGINT NOT NULL,
+ session_id BIGINT NULL, terms TEXT NOT NULL, status VARCHAR(16) NOT NULL DEFAULT 'pending',
+ created BIGINT NOT NULL, expires BIGINT NOT NULL, INDEX(status,expires), INDEX(customer), INDEX(provider)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS platform_tendency_attempts (
+ id BIGINT NOT NULL AUTO_INCREMENT UNIQUE,
+ token VARCHAR(16) PRIMARY KEY, user_id BIGINT NOT NULL, mode VARCHAR(8) NOT NULL,
+ version VARCHAR(64) NOT NULL, status VARCHAR(16) NOT NULL DEFAULT 'active',
+ started BIGINT NOT NULL, deadline BIGINT NOT NULL, completed BIGINT NOT NULL DEFAULT 0,
+ question_index INT NOT NULL DEFAULT 0, revision INT NOT NULL DEFAULT 0,
+ menu_message BIGINT NOT NULL DEFAULT 0, payload_cipher LONGTEXT NULL,
+ INDEX(user_id,status,completed), INDEX(status,deadline)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS platform_tendency_active (
+ user_id BIGINT PRIMARY KEY, attempt_token VARCHAR(16) NOT NULL UNIQUE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS platform_navigation (
+ user_id BIGINT PRIMARY KEY, payload LONGTEXT NOT NULL, expires BIGINT NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS platform_channel_gate (
+ id TINYINT PRIMARY KEY, channel_id BIGINT NOT NULL, title VARCHAR(255) NOT NULL,
+ join_url TEXT NOT NULL, enabled TINYINT NOT NULL DEFAULT 0, revision BIGINT NOT NULL DEFAULT 1,
+ bot_id BIGINT NOT NULL, health VARCHAR(32) NOT NULL DEFAULT 'ok', updated BIGINT NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS platform_memberships (
+ user_id BIGINT PRIMARY KEY, channel_id BIGINT NOT NULL, revision BIGINT NOT NULL,
+ member TINYINT NOT NULL DEFAULT 0, checked BIGINT NOT NULL, next_check BIGINT NOT NULL,
+ INDEX(next_check)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS platform_campaigns (
+ id BIGINT AUTO_INCREMENT PRIMARY KEY, kind VARCHAR(16) NOT NULL, creator BIGINT NOT NULL,
+ payload LONGTEXT NOT NULL, enabled TINYINT NOT NULL DEFAULT 0, revision INT NOT NULL DEFAULT 1,
+ status VARCHAR(16) NOT NULL DEFAULT 'draft', created BIGINT NOT NULL, last_shown BIGINT NOT NULL DEFAULT 0,
+ INDEX(kind,status,enabled,last_shown)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS platform_campaign_deliveries (
+ id BIGINT AUTO_INCREMENT PRIMARY KEY, campaign_id BIGINT NOT NULL, user_id BIGINT NOT NULL,
+ status VARCHAR(16) NOT NULL DEFAULT 'pending', attempts INT NOT NULL DEFAULT 0,
+ retry_at BIGINT NOT NULL DEFAULT 0, claimed BIGINT NOT NULL DEFAULT 0,
+ message_id BIGINT NOT NULL DEFAULT 0, error_code INT NOT NULL DEFAULT 0,
+ UNIQUE KEY campaign_recipient(campaign_id,user_id), INDEX(status,retry_at,id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS platform_outreach_state (
+ user_id BIGINT PRIMARY KEY, reachable TINYINT NOT NULL DEFAULT 1,
+ events INT NOT NULL DEFAULT 0, last_ad BIGINT NOT NULL DEFAULT 0,
+ last_campaign BIGINT NOT NULL DEFAULT 0, updated BIGINT NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS platform_growth (
+ user_id BIGINT PRIMARY KEY, welcome_claimed TINYINT NOT NULL DEFAULT 0,
+ started BIGINT NOT NULL DEFAULT 0, completed BIGINT NOT NULL DEFAULT 0,
+ inviter_id BIGINT NULL, attributed BIGINT NOT NULL DEFAULT 0,
+ referral_paid TINYINT NOT NULL DEFAULT 0, inviter_reward INT NOT NULL DEFAULT 0,
+ invitee_reward INT NOT NULL DEFAULT 0, referral_token VARCHAR(24) NULL UNIQUE,
+ INDEX(inviter_id,referral_paid)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS platform_anon_links (
+ user_id BIGINT PRIMARY KEY, token VARCHAR(32) NOT NULL UNIQUE,
+ revision INT NOT NULL DEFAULT 1, created BIGINT NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS platform_anon_threads (
+ token VARCHAR(32) PRIMARY KEY, owner_id BIGINT NOT NULL, guest_id BIGINT NOT NULL,
+ created BIGINT NOT NULL, expires BIGINT NOT NULL,
+ INDEX(owner_id,created), INDEX(guest_id,created)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS platform_anon_intents (
+ user_id BIGINT PRIMARY KEY, thread_token VARCHAR(32) NOT NULL,
+ link_token VARCHAR(32) NOT NULL DEFAULT '', expires BIGINT NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS platform_anon_messages (
+ token VARCHAR(32) PRIMARY KEY, thread_token VARCHAR(32) NOT NULL,
+ sender BIGINT NOT NULL, recipient BIGINT NOT NULL, source_message BIGINT NOT NULL,
+ target_message BIGINT NOT NULL DEFAULT 0, payload_cipher LONGTEXT NOT NULL,
+ status VARCHAR(16) NOT NULL DEFAULT 'pending', created BIGINT NOT NULL,
+ UNIQUE KEY source(sender,source_message), INDEX(recipient,created), INDEX(sender,created),
+ INDEX(thread_token,created)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS platform_anon_blocks (
+ user_id BIGINT NOT NULL, blocked_id BIGINT NOT NULL, created BIGINT NOT NULL,
+ PRIMARY KEY(user_id,blocked_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
